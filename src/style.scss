@@ -1377,7 +1377,7 @@ body {
     }
 
     .card-body {
-      background-color: #005b96;
+      background-image: linear-gradient(to top, #525353, #373838, #111b21);
       text-align: center;
     }
 
@@ -2048,7 +2048,7 @@ body {
 
   .pay-btn {
     width: 100%;
-    background-color: $primary-color;
+    background-image: linear-gradient(to top, #525353, #373838, #111b21);
     color: white;
     padding: 12px 20px;
     font-size: 20px;

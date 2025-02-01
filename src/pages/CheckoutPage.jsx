@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Collapse, Form, Row, Col } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
 import config from "../config.js";
-import logo from "../images/qh-logo.jpg"
+import logo from "../images/arion.webp";
 import { Country, City } from "country-state-city";
 import Select from 'react-select';
 import { getCities } from 'countries-cities'; 
