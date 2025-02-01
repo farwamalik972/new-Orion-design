@@ -155,10 +155,14 @@ body {
 .footer {
   background-image: linear-gradient(to top, #525353, #373838, #111b21);
   color: white;
-  padding: 40px 0 !important;
+  // padding: 40px 0 !important;
   position: relative;
   // z-index: -1;
-
+.logo{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
   .adress-text {
     color: #c3ddf0;
     font-size: 13px;
