@@ -77,8 +77,8 @@ function NewContact() {
                     />
                   </div>
                 </Col>
-                <Col md={6}>
-                  <div className="single-input-field">
+                <Col md={12}>
+                  <div className="single-input-field" style={{marginLeft:"-15px"}}>
                     <Form.Control
                       type="text"
                       placeholder="Phone Number"
@@ -86,15 +86,7 @@ function NewContact() {
                     />
                   </div>
                 </Col>
-                <Col md={6}>
-                  <div className="single-input-field">
-                    <Form.Control
-                      type="text"
-                      placeholder="Subject"
-                      name="subject"
-                    />
-                  </div>
-                </Col>
+                
                 <Col md={12} className="message-input">
                   <div className="single-input-field">
                     <Form.Control
