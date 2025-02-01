@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import led from "../images/led-bulb1.jpg"
-import downlight from "../images/down3.jpg"
-import slim from "../images/slim-panel.jpg"
-import adjustable from "../images/adjustable-panel.jpg"
-import surface from "../images/spot-light.jpg"
-import cob from "../images/flood.jpg"
-import batten from "../images/batten1.jpg"
-import tube from "../images/tube-light.jpg"
+import led from "../images/led2.jpg"
+import downlight from "../images/downlight.jpg"
+import slim from "../images/panel-light.jpg"
+import adjustable from "../images/adju.jpeg"
+import surface from "../images/8.jpg"
+import cob from "../images/cob.jpeg"
+import batten from "../images/batn.jpeg"
+import tube from "../images/newtube.jpeg"
 import config from "../config.js";
 import axios from 'axios';
 function ConsumerCards() {

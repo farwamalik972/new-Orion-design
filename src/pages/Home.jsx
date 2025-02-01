@@ -12,7 +12,7 @@ function Home() {
     <div className="home-wrapper-page">
   <CustomNav />
   <div className="home-banner-img mb-5"></div>
-<div className="container mb-5">
+<div className="container-fluid mb-5">
 {/* auto carousel */}
 <AutoSlider/>
 </div>
