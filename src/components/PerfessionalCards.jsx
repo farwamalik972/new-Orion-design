@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import led from "../images/newstreet.jpeg";
-import downlight from "../images/wall.jpeg";
-import slim from "../images/hig.jpeg";
-import adjustable from "../images/panel2.jpg";
-import surface from "../images/tser.jpeg";
-import cob from "../images/newspot.jpeg";
-import batten from "../images/newtubee.jpeg";
-import stadium from "../images/newst.jpeg";
-import street from "../images/newsolar.jpeg";
-import smart from "../images/samrt.jpeg";
+import led from "../images/street-light.jpg";
+import downlight from "../images/tsereis1.jpg";
+import slim from "../images/high-bay.jpg";
+import adjustable from "../images/panel-light.jpg";
+import surface from "../images/tseriess-light.jpg";
+import cob from "../images/spot-light.jpg";
+import batten from "../images/tube-light.jpg";
+import stadium from "../images/stadium-light.jpg";
+import street from "../images/solr.jpeg";
+import smart from "../images/slim-panel.jpg";
 import config from "../config.js";
 import axios from "axios";
 
