@@ -317,7 +317,9 @@ body {
 //   video section
 .home-wrapper-page {
   .home-banner-img{
-   background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.7) 100%) ,url("./images/home-banner.jpg");
+    background: 
+    url("./images/home-banner.jpg");
+    filter: brightness(0.6);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
