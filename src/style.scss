@@ -327,9 +327,13 @@ body {
     min-height: 700px;
   }
   .separator {
-    height: 50px; // Adjust as needed
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0));
-    margin-bottom: -5px;
+   height: 40px; // Adjust as needed
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0));
+  margin-bottom: -10px; // Helps in removing the visible gap
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 1;
   }
 // SCSS
 .auto-slider-wrapper {
