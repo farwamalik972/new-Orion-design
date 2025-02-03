@@ -56,7 +56,9 @@ const AutoSlider = () => {
         slide7,
         slide8,
         slide1,
-        slide2];
+        slide2,
+        
+    ];
 
     return (
         <div className="auto-slider-wrapper">
