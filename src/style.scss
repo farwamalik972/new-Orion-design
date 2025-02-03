@@ -828,7 +828,11 @@ body {
     text-align: center;
     font-weight: 700;
     padding-bottom: 15px;
+    @media (max-width: 768px) {
+      font-size: 30px !important;
+    }
   }
+
 }
 
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Roboto:700&display=swap');
@@ -866,7 +870,12 @@ body {
   position: absolute;
   z-index: 1;
   left: 5vw;
+  @media (max-width: 768px) {
+    width: 100% !important;
+    display: none;
+  }
 }
+
 
 .main {
   position: relative;
@@ -881,6 +890,10 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   color: white;
+  @media (max-width: 768px) {
+    padding: 10px 20px !important;
+    letter-spacing: 0 !important;
+  }
 }
 
 .contact-details {
@@ -888,7 +901,9 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   margin-top: 20px; /* Added space between the heading and contact details */
-  
+  @media (max-width: 768px) {
+    padding: 0px 20px !important;
+  }
   .contact-item {
     display: flex;
     align-items: flex-start;
