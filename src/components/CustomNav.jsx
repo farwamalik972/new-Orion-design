@@ -175,12 +175,12 @@ function CustomNav() {
               </Container>
             </div>
           </div>
-          <Button className="w-100 bg-dark" style={{ border: 'none' }}>
+          <Button className="w-100 bg-dark" style={{ border: 'none', backgroundImage: 'linear-gradient(to top, #525353, #373838, #111b21)' }}>
             <a href="/shopping-cart" variant="dark" className="shopping-btn" onClick={handleClose} style={{ color: "white", textDecoration: "none", border: "none" }}>
               View Shopping
             </a>
           </Button>
-          <Button className="w-100 bg-dark mt-3" style={{ border: 'none' }}>
+          <Button className="w-100 bg-dark mt-3" style={{ border: 'none' ,backgroundImage: 'linear-gradient(to top, #525353, #373838, #111b21)' }}>
             <a href="/checkoutpage" variant="dark" className="shopping-btn" style={{ color: "white", textDecoration: "none", border: "none" }}>
               Checkout
             </a>
