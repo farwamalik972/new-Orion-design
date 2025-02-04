@@ -10,120 +10,91 @@ import slide7 from "../images/batn.jpeg";
 import slide8 from "../images/newtube.jpeg";
 
 const AutoSlider = () => {
-  const sliderRef = useRef(null);
-  const scrollAmount = 260; // Distance to scroll per click
-  const [isHovered, setIsHovered] = useState(false);
-  const [isMobile, setIsMobile] = useState(false); // Track mobile view
+    const sliderRef = useRef(null);
+    const scrollAmount = 260; // Distance to scroll per click
+    const [isHovered, setIsHovered] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(null); // Track tapped card on mobile
 
-  const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
+    const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
 
-  // Function to handle left button click
-  const handleLeftClick = () => {
-    if (isMobile) { // Only trigger scroll for mobile view
-      sliderRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  // Function to handle right button click
-  const handleRightClick = () => {
-    if (isMobile) { // Only trigger scroll for mobile view
-      sliderRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  // Update the isMobile 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); 
+    const handleLeftClick = () => {
+        if (isMobile) {
+            sliderRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        }
     };
 
-    // Check on initial load
-    handleResize();
-
-    // Add resize event listener
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  // Effect to continuously scroll the slides when not hovered
-  useEffect(() => {
-    const slider = sliderRef.current;
-    let animationFrame;
-
-    const smoothScroll = () => {
-      if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-        slider.scrollLeft = 0; // Loop back to the start
-      }
-
-      if (!isHovered && !isMobile) { // Only auto scroll if not hovered and not mobile
-        slider.scrollLeft += 1; // Auto scroll when not hovered in desktop view
-      }
-
-      animationFrame = requestAnimationFrame(smoothScroll);
+    const handleRightClick = () => {
+        if (isMobile) {
+            sliderRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
     };
 
-    smoothScroll(); // Start the smooth scrolling
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
-    return () => {
-      cancelAnimationFrame(animationFrame); // Cleanup
-    };
-  }, [isHovered, isMobile]);
+    useEffect(() => {
+        const slider = sliderRef.current;
+        let animationFrame;
 
-  return (
-    <div className="auto-slider-wrapper">
-      <div className="slider-container">
-        {/* Left Navigation Button */}
-        <button
-          className="nav-btn left"
-          onClick={handleLeftClick}
-          aria-label="Previous Slide"
-        >
-          <FaChevronLeft />
-        </button>
+        const smoothScroll = () => {
+            if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+                slider.scrollLeft = 0;
+            }
 
-        {/* Slider */}
-        <div
-          className="slider"
-          ref={sliderRef}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <div className="slide-track">
-            {[...slides, ...slides].map((slide, index) => (
-              <div key={index} className="slide">
-                <a href="#">
-                  <div className="overlay"></div>
-                  <img src={slide} alt="Product" className="blurred-image" />
-                  <div className="card-text">
-                    <h2>LED Bulb</h2>
-                  </div>
-                </a>
-              </div>
-            ))}
-          </div>
+            if (!isHovered && !isMobile) {
+                slider.scrollLeft += 1;
+            }
+
+            animationFrame = requestAnimationFrame(smoothScroll);
+        };
+
+        smoothScroll();
+        return () => cancelAnimationFrame(animationFrame);
+    }, [isHovered, isMobile]);
+
+    return (
+        <div className="auto-slider-wrapper">
+            <div className="slider-container">
+                {/* Left Button */}
+                <button className="nav-btn left" onClick={handleLeftClick} aria-label="Previous Slide">
+                    <FaChevronLeft />
+                </button>
+
+                {/* Slider */}
+                <div className="slider" ref={sliderRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                    <div className="slide-track">
+                        {[...slides, ...slides].map((slide, index) => (
+                            <div
+                                key={index}
+                                className={`slide ${isMobile && activeIndex === index ? "active" : ""}`} // Apply active class on tap
+                                onClick={() => isMobile && setActiveIndex(index)}
+                            >
+                                <a href="#">
+                                    <div className="overlay"></div>
+                                    <img src={slide} alt="Product" className="blurred-image" />
+                                    <div className="card-text">
+                                        <h2>LED Bulb</h2>
+                                    </div>
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Right Button */}
+                <button className="nav-btn right" onClick={handleRightClick} aria-label="Next Slide">
+                    <FaChevronRight />
+                </button>
+            </div>
         </div>
-
-        {/* Right Navigation Button */}
-        <button
-          className="nav-btn right"
-          onClick={handleRightClick}
-          aria-label="Next Slide"
-        >
-          <FaChevronRight />
-        </button>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default AutoSlider;

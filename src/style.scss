@@ -390,8 +390,10 @@ body {
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(8px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
 
-        &:hover {
+        &:hover,
+        &.active { // Apply hover effect on both hover (desktop) and active tap (mobile)
           transform: scale(1.08);
 
           .overlay {
@@ -482,33 +484,32 @@ body {
   }
 }
 
-/* Hide navigation buttons on desktop */
+/* Mobile View Adjustments */
 @media (max-width: 768px) {
   .auto-slider-wrapper {
     padding: 10px;
   }
 
   .slider-container {
-    max-width: 100%; 
+    max-width: 100%;
   }
 
   .nav-btn {
-    display: block; 
+    display: block;
     padding: 8px;
   }
 
   .slider {
     .slide {
-      min-width: 260px !important;
-      height: 250px !important;
+      min-width: 200px;
+      height: 220px;
     }
 
     .card-text {
-      font-size: 16px; /* Adjust text size */
+      font-size: 16px;
     }
   }
 }
-
 
 }
 
