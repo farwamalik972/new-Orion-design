@@ -443,6 +443,7 @@ body {
             font-weight: bold;
             text-align: center;
             z-index: 2;
+
             h2 {
               font-size: 20px;
               font-weight: 600;
@@ -480,6 +481,35 @@ body {
     }
   }
 }
+
+/* Hide navigation buttons on desktop */
+@media (max-width: 768px) {
+  .auto-slider-wrapper {
+    padding: 10px;
+  }
+
+  .slider-container {
+    max-width: 100%; 
+  }
+
+  .nav-btn {
+    display: block; 
+    padding: 8px;
+  }
+
+  .slider {
+    .slide {
+      min-width: 260px !important;
+      height: 250px !important;
+    }
+
+    .card-text {
+      font-size: 16px; /* Adjust text size */
+    }
+  }
+}
+
+
 }
 
 
