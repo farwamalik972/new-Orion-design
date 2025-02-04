@@ -1,64 +1,45 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import slide1 from "../images/led2.jpg"
-import slide2 from "../images/downlight.jpg"
-import slide3 from "../images/panel-light.jpg"
-import slide4 from "../images/adju.jpeg"
-import slide5 from "../images/8.jpg"
-import slide6 from "../images/cob.jpeg"
-import slide7 from "../images/batn.jpeg"
-import slide8 from "../images/newtube.jpeg"
-
+import slide1 from "../images/led2.jpg";
+import slide2 from "../images/downlight.jpg";
+import slide3 from "../images/panel-light.jpg";
+import slide4 from "../images/adju.jpeg";
+import slide5 from "../images/8.jpg";
+import slide6 from "../images/cob.jpeg";
+import slide7 from "../images/batn.jpeg";
+import slide8 from "../images/newtube.jpeg";
 
 const AutoSlider = () => {
     const sliderRef = useRef(null);
+    const scrollAmount = 1; // Speed of scrolling
+    const [isHovered, setIsHovered] = useState(false); // State to track if mouse is hovering
 
     useEffect(() => {
         const slider = sliderRef.current;
         let animationFrame;
 
+        // Function to start smooth scrolling continuously
         const smoothScroll = () => {
-            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-                slider.scrollTo({ left: 0, behavior: "smooth" });
-            } else {
-                slider.scrollBy({ left: 1, behavior: "smooth" });
+            if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+                // Reset scroll to the beginning immediately after the end
+                slider.scrollLeft = 0;
             }
-            animationFrame = requestAnimationFrame(smoothScroll);
+            if (!isHovered) {  // Only scroll if the mouse is not hovering
+                slider.scrollLeft += scrollAmount;
+            }
+            animationFrame = requestAnimationFrame(smoothScroll); // Keep looping the scroll
         };
 
-        const startAutoPlay = () => {
-            animationFrame = requestAnimationFrame(smoothScroll);
-        };
+        // Start the auto-scrolling when the component mounts
+        smoothScroll();
 
-        const stopAutoPlay = () => {
-            cancelAnimationFrame(animationFrame);
-        };
-
-        startAutoPlay();
-
-        slider.addEventListener("mouseenter", stopAutoPlay);
-        slider.addEventListener("mouseleave", startAutoPlay);
-
+        // Cleanup the animation frame when the component unmounts
         return () => {
-            slider.removeEventListener("mouseenter", stopAutoPlay);
-            slider.removeEventListener("mouseleave", startAutoPlay);
             cancelAnimationFrame(animationFrame);
         };
-    }, []);
+    }, [isHovered]);
 
-    const slides = [
-        slide1,
-        slide2,
-        slide3,
-        slide4,
-        slide5,
-        slide6,
-        slide7,
-        slide8,
-        slide1,
-        slide2,
-        
-    ];
+    const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
 
     return (
         <div className="auto-slider-wrapper">
@@ -69,9 +50,14 @@ const AutoSlider = () => {
                 >
                     <FaChevronLeft />
                 </button>
-                <div className="slider" ref={sliderRef}>
+                <div
+                    className="slider"
+                    ref={sliderRef}
+                    onMouseEnter={() => setIsHovered(true)} // Stop scrolling on hover
+                    onMouseLeave={() => setIsHovered(false)} // Resume scrolling when mouse leaves
+                >
                     <div className="slide-track">
-                        {slides.map((slide, index) => (
+                        {[...slides, ...slides].map((slide, index) => (
                             <div key={index} className="slide">
                                 <a href="#">
                                     <div className="overlay"></div>
