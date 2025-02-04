@@ -21,12 +21,14 @@ const AutoSlider = () => {
         // Function to start smooth scrolling continuously
         const smoothScroll = () => {
             if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-                // Reset scroll to the beginning immediately after the end
+                // Reset the scroll position immediately when it reaches the end
                 slider.scrollLeft = 0;
             }
-            if (!isHovered) {  // Only scroll if the mouse is not hovering
-                slider.scrollLeft += scrollAmount;
+
+            if (!isHovered) {
+                slider.scrollLeft += scrollAmount; // Scroll continuously
             }
+
             animationFrame = requestAnimationFrame(smoothScroll); // Keep looping the scroll
         };
 
