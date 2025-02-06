@@ -92,21 +92,21 @@ function About() {
               <MdLocationOn className="icon" />
               <div>
                 <strong>Address:</strong>
-                <p>123 Main St, New York, NY 10001</p>
+                <p>LAL BADSHAH ROAD MULTAN ROAD, KHANPUR, LAHORE</p>
               </div>
             </div>
             <div className="contact-item">
               <MdEmail className="icon" />
               <div>
                 <strong>Email:</strong>
-                <p>contact@company.com</p>
+                <p>info@orionlightingpakistan.com</p>
               </div>
             </div>
             <div className="contact-item">
               <MdPhone className="icon" />
               <div>
                 <strong>Phone:</strong>
-                <p>+1 (123) 456-7890</p>
+                <p>042 37510711</p>
               </div>
             </div>
           </div>

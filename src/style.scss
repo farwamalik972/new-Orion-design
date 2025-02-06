@@ -391,7 +391,6 @@ body {
         backdrop-filter: blur(8px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         cursor: pointer;
-
         &:hover,
         &.active { // Apply hover effect on both hover (desktop) and active tap (mobile)
           transform: scale(1.08);
@@ -932,7 +931,7 @@ body {
 
 .main h1 {
   font-family: "Roboto", sans-serif;
-  font-size: calc(-6px + 10vw);
+  font-size: calc(-30px + 10vw);
   letter-spacing: -5px;
   padding-top: 20px;
   padding-bottom: 20px;
