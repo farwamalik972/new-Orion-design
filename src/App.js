@@ -16,13 +16,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Support from './pages/Support';
 import Projects from './pages/Projects';
 import NewContact from './pages/NewContact';
+import NewNav from './components/NewNav';
+import NewHome from './pages/NewHome';
+import Whatsnew from './pages/Whatsnew';
 
 function App() {
   return (
     <> 
     <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/product" element={<Product />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
@@ -36,6 +39,9 @@ function App() {
           <Route path="/support" element={<Support />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/newcontact" element={<NewContact />} />
+          <Route path="/newnav" element={<NewNav />} />
+          <Route path="/" element={<NewHome />} />
+          <Route path="/new" element={<Whatsnew />} />
           </Routes>
     </Router>
     </>

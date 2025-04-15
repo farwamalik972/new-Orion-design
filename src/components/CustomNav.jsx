@@ -118,9 +118,9 @@ function CustomNav() {
               </div>
             </div>
             <Nav.Link href="/about">About Us</Nav.Link>
-            <Nav.Link href="/newcontact">Contact</Nav.Link>
-            <Nav.Link href="/support">Support</Nav.Link>
             <Nav.Link href="/project">Projects</Nav.Link>
+            <Nav.Link href="/support">Support</Nav.Link>
+            <Nav.Link href="/newcontact">Contact</Nav.Link>
           </Nav>
 
           <Form className="d-flex search-bar">

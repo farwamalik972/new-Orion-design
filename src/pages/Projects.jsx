@@ -8,12 +8,13 @@ import img3 from "../images/batten1.jpg"
 import img4 from "../images/product6.jpg"
 import img5 from "../images/perfessional-consumer (1).webp"
 import Footer from '../components/Footer'
+import NewNav from '../components/NewNav'
 
 
 function Projects() {
   return (
     <div className='project-wraper'>
-     <CustomNav/>
+     <NewNav/>
     <div className="conatiner mt-5" style={{maxWidth:"1200px", margin:"auto"}}>
         <div className="row">
             <div className="col-md-4 mb-4">
@@ -66,6 +67,7 @@ function Projects() {
             </div>
         </div>
     </div>
+    
        
 <Footer/>
   

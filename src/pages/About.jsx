@@ -5,12 +5,14 @@ import Footer from '../components/Footer';
 import banner from "../images/banner1.webp"
 import { FaSpinner } from 'react-icons/fa';
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md"; // Importing icons from react-icons/md
+import NewNav from '../components/NewNav';
 
 function About() {
   return (
     <>
     <div className='about-wrapper-page'>
-<CustomNav/>
+{/* <CustomNav/> */}
+<NewNav/>
 <section className="about-section">
       <Container>
         <Row>

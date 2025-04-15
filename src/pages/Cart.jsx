@@ -10,6 +10,7 @@ import CartModal from '../Modals/CartModal';
 import { Modal } from "react-bootstrap";
 import { BsTrash } from "react-icons/bs";
 import config from "../config.js";
+import NewNav from '../components/NewNav.jsx';
 
 function Cart() {
   const [quantity, setQuantity] = useState(1);
@@ -55,7 +56,7 @@ function Cart() {
   if (!product) return <p>Loading...</p>;
     return (
         <div className='cart-page-wrapper'>
-            <CustomNav />
+         <NewNav/>
             <Container className="product-container mb-5">
                 <Row>
                     <Col md={6} className="product-image">

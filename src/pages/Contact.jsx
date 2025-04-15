@@ -4,6 +4,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Footer from '../components/Footer';
 import config from "../config.js";
 import axios from 'axios';
+import NewNav from '../components/NewNav.jsx';
 
 
 function Contact() {
@@ -33,7 +34,7 @@ function Contact() {
   };
   return (
     <div className='contact-page-wrapper'>
-     <CustomNav/>
+ <NewNav/>
      <Container className="contact-us my-5">
       <div className="text-center mb-4">
         <h1>We’re here to help you grow</h1>

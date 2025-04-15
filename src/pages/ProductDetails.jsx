@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import { useParams } from 'react-router-dom';
 import config from "../config.js";
 import axios from 'axios';
+import NewNav from '../components/NewNav.jsx';
 
 
 function BannerCards() {
@@ -20,7 +21,7 @@ const { id } = useParams();
   }, [id]);
   return (
     <div className='consumer-cards-wrapper'>
-      <CustomNav />
+<NewNav/>
       <Container className="my-5">
         <Row className="justify-content-center">
           {cards.map((card, index) => (

@@ -2,11 +2,13 @@ import React from 'react'
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import CustomNav from '../components/CustomNav';
 import Footer from '../components/Footer';
+import NewNav from '../components/NewNav';
 
 function NewContact() {
   return (
     <div className="new-contact-page">
-        <CustomNav/>
+        {/* <CustomNav/> */}
+        <NewNav/>
     <section className="contact-page-sec">
     <Container>
       <Row>
@@ -53,7 +55,7 @@ function NewContact() {
         </Col>
       </Row>
       <Row>
-        <Col md={8}>
+        <Col md={6}>
           <div className="contact-page-form">
             <h2>Get in Touch</h2>
             <Form action="contact-mail.php" method="post">
@@ -77,7 +79,7 @@ function NewContact() {
                     />
                   </div>
                 </Col>
-                <Col md={12}>
+                <Col md={12} >
                   <div className="single-input-field" style={{marginLeft:"-15px"}}>
                     <Form.Control
                       type="text"
@@ -97,7 +99,7 @@ function NewContact() {
                     />
                   </div>
                 </Col>
-                <Col md={12}>
+                <Col md={12} className='mb-3'>
                   <div className="single-input-fieldsbtn">
                     <Button type="submit">Send Now</Button>
                   </div>
@@ -106,7 +108,7 @@ function NewContact() {
             </Form>
           </div>
         </Col>
-        <Col md={4}>
+        <Col md={6}>
           <div className="contact-page-map">
             <iframe
              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345094775!2d113.22823401591385!3d23.05101231916162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34038fdc5e5d2d3d%3A0x1f730b6ae536a8ad!2sShunde%20Lighting%20Industrial%20Zone!5e0!3m2!1sen!2s!4v1615992024035!5m2!1sen!2s"

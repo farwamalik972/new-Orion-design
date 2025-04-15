@@ -1,0 +1,169 @@
+  
+.new-nav-wrapper {
+    .custom-navbar {
+      background-image: linear-gradient(to top, #525353, #373838, #111b21);
+      padding: 10px 0;
+      
+  .navbar-brand .logo {
+    height: 50px;
+    object-fit: contain;
+    width: 145px;
+  }
+
+  .nav-link {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 15px;
+
+    &:hover {
+      color: #b3cde0;
+    }
+    &.active{
+      color: #b3cde0;
+    }
+  }
+  
+      .nav-item-dropdown {
+        .dropdown-menu-custom {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: white;
+          display: flex;
+          justify-content: space-between;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-10px);
+          transition: all 0.3s ease-in-out;
+          z-index: 1000;
+  
+          .dropdown-section {
+            flex: 1;
+            position: relative;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+  
+            .dropdown-image {
+              width: 100%;
+              margin-bottom: 10px;
+            //   min-height: 80px;
+              display: flex;  // ✅ Center image
+              justify-content: center;
+  
+              img {
+                height: 100%;
+                max-height: 170px;  // ✅ Fixed Height
+                width: 100%;  // ✅ Auto Width (Increases Dynamically)
+                border-radius: 5px;
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                opacity: 1;
+                transform: scale(1);
+              }
+            }
+  
+            h4 {
+              font-size: 16px;
+              font-weight: bold;
+              background-image: linear-gradient(to top, #525353, #373838, #111b21);
+              color: white;
+              display: inline-block;
+              padding: 5px 10px;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+  
+            .category-content {
+              display: flex;
+              flex-direction: column;
+  
+              ul {
+                list-style: none;
+                padding: 0;
+                margin-top: 10px;
+  
+                li {
+                  font-size: 14px;
+                  color: #333;
+                  padding: 5px 0;
+                  cursor: pointer;
+                  transition: color 0.3s ease, transform 0.2s ease-in-out;
+  
+                  &:hover {
+                    color: #00227a;
+                    transform: translateX(5px);
+                  }
+                }
+              }
+            }
+          }
+  
+          // ✅ Dotted Border Right
+          .dropdown-section:not(:last-child) {
+            border-right: 2px dotted #999;
+            padding-right: 15px;
+          }
+        }
+      }
+  
+      .nav-item-dropdown:hover .dropdown-menu-custom {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .search-bar {
+        margin-right: 20px;
+    
+        input {
+          border-radius: 5px;
+          border: 1px solid #ddd;
+          padding: 5px 10px;
+          background: transparent;
+          color: white;
+
+        }
+        .form-control{
+          box-shadow: none;
+          outline: none;
+        }
+       ::placeholder{
+        color: white !important;
+        font-size: 14px;
+        font-weight: 400;
+       }
+      }
+    
+      .cart-icon {
+        position: relative;
+        color: white;
+        font-size: 22px;
+        margin-left: 10px;
+    
+        &:hover {
+          background-color: none !important;
+        }
+    
+        .cart-badge {
+          position: absolute;
+          top: -5px;
+          right: -16px;
+          background-color: #dc3545;
+          color: white;
+          font-size: 12px;
+          font-weight: bold;
+          border-radius: 50%;
+          padding: 2px 8px;
+        }
+      }
+    }
+  }
+  
+  
+  
+  

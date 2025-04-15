@@ -6,6 +6,7 @@ import Banner from '../components/Banner';
 import BannerCards from '../components/BannerCards';
 import Footer from '../components/Footer';
 import config from "../config.js";
+import NewNav from '../components/NewNav.jsx';
 
 
 function LedBulb() {
@@ -26,7 +27,7 @@ function LedBulb() {
 
   return (
     <div className='led-bulb-page'>
-      <CustomNav />
+<NewNav/>
       {product ? (
         <>
           <Banner
