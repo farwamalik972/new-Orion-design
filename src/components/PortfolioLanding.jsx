@@ -32,6 +32,8 @@ const PortfolioLanding = () => {
           });
         });
       }, []);
+
+      
     
   return (
 <Container fluid className="wrapper">
@@ -45,7 +47,6 @@ const PortfolioLanding = () => {
 
       <div id="div-mask-front">
         <h1>Orion Lighting</h1>
-        {/* <p>This page is about me, explore!</p> */}
       </div>
 
       <div id="div-mask-back" aria-hidden="true">
@@ -68,9 +69,6 @@ const PortfolioLanding = () => {
           <span className="variable"></span> <span className="character"></span>{" "}
           <span className="string"> or custom applications, we deliver innovative LED PCB solutions that power a brighter,<br></br> more efficient future.”</span>
           <br />
-          {/* <span className="variable">expertise</span> <span className="character">=</span>{" "}
-          <span className="string">"Developing Mobile, Desktop and Web Applications"</span>
-          <br /> */}
         </pre>
       </div>
     </Container>

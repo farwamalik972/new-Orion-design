@@ -79,126 +79,83 @@ const Product = () => {
   return (
     <div className="pro-wrapper">
       <NewNav/>
-   
+
     <div className="experience-header">
-      <Row className="section-boxes">
-        {/* Card 1 */}
-        <Col xs={12} sm={6} md={3} className="section-boxes-wrap">
-       <a href="/consumer-product">
-       <div className="section-title">
-            <div className="section-projects-overflow">
-              <Card className="section-box">
-                <Swiper
-                  spaceBetween={10}
-                  slidesPerView={1}
-                  zoom={true}
-                  lazy={true}
-                  loop={false}
-                  grabCursor={true}
-                >
-                  <SwiperSlide>
-                    <div className="swiper-zoom-container">
-                      <img src={consumer} alt="Project 1" />
-                    </div>
-                  </SwiperSlide>
-                </Swiper>
-              </Card>
-            </div>
-              <div className="project-type">
-              <h2>Consumer</h2>
-            </div>
-          </div>
-       </a>
-        </Col>
-
-        {/* Card 2 */}
-        <Col xs={12} sm={6} md={3} className="section-boxes-wrap">
-        <a href="/perfessional-product">
+  <Row className="section-boxes">
+    {/* Card 1 */}
+    <Col xs={12} sm={6} md={3} className="section-boxes-wrap">
+      <a href="/consumer-product">
         <div className="section-title">
-            <div className="section-projects-overflow">
-              <Card className="section-box">
-                <Swiper
-                  spaceBetween={10}
-                  slidesPerView={1}
-                  zoom={true}
-                  lazy={true}
-                  loop={false}
-                  grabCursor={true}
-                >
-                  <SwiperSlide>
-                    <div className="swiper-zoom-container">
-                      <img src={professional} alt="Project 2" />
-                    </div>
-                  </SwiperSlide>
-                </Swiper>
-              </Card>
-            </div>
-            <div className="project-type">
-                <h2>Professional</h2>
-            </div>
+          <div className="section-projects-overflow">
+            <Card className="section-box">
+              <div className="swiper-zoom-container">
+                <img src={consumer} alt="Project 1" />
+              </div>
+            </Card>
           </div>
-        </a>
-        </Col>
+          <div className="project-type">
+            <h2>Consumer</h2>
+          </div>
+        </div>
+      </a>
+    </Col>
 
-        {/* Card 3 */}
-        <Col xs={12} sm={6} md={3} className="section-boxes-wrap">
-        <a href="">
+    {/* Card 2 */}
+    <Col xs={12} sm={6} md={3} className="section-boxes-wrap">
+      <a href="/perfessional-product">
         <div className="section-title">
-            <div className="section-projects-overflow">
-              <Card className="section-box">
-                <Swiper
-                  spaceBetween={10}
-                  slidesPerView={1}
-                  zoom={true}
-                  lazy={true}
-                  loop={false}
-                  grabCursor={true}
-                >
-                  <SwiperSlide>
-                    <div className="swiper-zoom-container">
-                      <img src={pcb} alt="Project 3" />
-                    </div>
-                  </SwiperSlide>
-                </Swiper>
-              </Card>
-            </div>
-              <div className="project-type">
-               <h2>Smart Lighting</h2>
-            </div>
+          <div className="section-projects-overflow">
+            <Card className="section-box">
+              <div className="swiper-zoom-container">
+                <img src={professional} alt="Project 2" />
+              </div>
+            </Card>
           </div>
-        </a>
-        </Col>
+          <div className="project-type">
+            <h2>Professional</h2>
+          </div>
+        </div>
+      </a>
+    </Col>
 
-           {/* Card 4 */}
-           <Col xs={12} sm={6} md={3} className="section-boxes-wrap">
-        <a href="">
+    {/* Card 3 */}
+    <Col xs={12} sm={6} md={3} className="section-boxes-wrap">
+      <a href="/new">
         <div className="section-title">
-            <div className="section-projects-overflow">
-              <Card className="section-box">
-                <Swiper
-                  spaceBetween={10}
-                  slidesPerView={1}
-                  zoom={true}
-                  lazy={true}
-                  loop={false}
-                  grabCursor={true}
-                >
-                  <SwiperSlide>
-                    <div className="swiper-zoom-container">
-                      <img src={smartlght} alt="Project 3" />
-                    </div>
-                  </SwiperSlide>
-                </Swiper>
-              </Card>
-            </div>
-            <div className="project-type">
-                <h2>PCB</h2>
-            </div>
+          <div className="section-projects-overflow">
+            <Card className="section-box">
+              <div className="swiper-zoom-container">
+                <img src={smartlght} alt="Project 3" />
+              </div>
+            </Card>
           </div>
-        </a>
-        </Col>
-      </Row>
-    </div>
+          <div className="project-type">
+            <h2>PCB</h2>
+          </div>
+        </div>
+      </a>
+    </Col>
+
+    {/* Card 4 */}
+    <Col xs={12} sm={6} md={3} className="section-boxes-wrap">
+      <a href="">
+        <div className="section-title">
+          <div className="section-projects-overflow">
+            <Card className="section-box">
+              <div className="swiper-zoom-container">
+                <img src={pcb} alt="Project 4" />
+              </div>
+            </Card>
+          </div>
+          <div className="project-type">
+            <h2>Smart Lighting</h2>
+          </div>
+        </div>
+      </a>
+    </Col>
+  </Row>
+</div>
+
     <BentoGrid/>
     <ImageSliderTabs/>
     <Footer/>

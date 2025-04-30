@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-// import { Navbar, Nav, Container, Form, FormControl } from "react-bootstrap";
-import logo from "../images/arion.webp";
+import logo from "../images/ORION.png";
 import bulb1 from "../images/2.webp";
 import bulb2 from "../images/3.webp";
 import bulb3 from "../images/6.webp";
@@ -16,6 +15,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import config from "../config.js";
 import axios from "axios";
 import "../NewNav.scss";
+import { useLocation } from 'react-router-dom';
 
 const NewNav = () => {
   const [hoveredCategory, setHoveredCategory] = useState(null);
@@ -126,12 +126,19 @@ const NewNav = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+
   return (
-    <div className="new-nav-wrapper">
-      <Navbar expand="lg" className="custom-navbar">
+    <div className={`new-nav-wrapper ${isHomePage ? '' : 'other-pages'}`}>
+      <Navbar expand="lg"
+      className={`custom-navbar ${isHomePage ? 'transparent-navbar' : ''}`}
+      >
         <Container>
           <Navbar.Brand href="#">
-            <img src={logo} alt="QHlighting" className="logo mt-1" />
+            <img src={logo} alt="QHlighting" className="logo mt-2" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -195,7 +202,7 @@ const NewNav = () => {
                   ))}
                 </div>
               </div>
-              <Nav.Link href="/new">What's New</Nav.Link>
+              {/* <Nav.Link href="/new">What's New</Nav.Link> */}
               <Nav.Link href="/project">Projects</Nav.Link>
               <Nav.Link href="/support">Support</Nav.Link>
               <Nav.Link href="/newcontact">Contact Us</Nav.Link>
@@ -223,7 +230,6 @@ const NewNav = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* modal */}
          {/* Offcanvas Modal */}
             <Offcanvas show={show} onHide={handleClose} placement="end" className="offcanvas-modal">
               <Offcanvas.Header closeButton>

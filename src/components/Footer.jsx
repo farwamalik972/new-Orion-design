@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { FaWhatsapp, FaWeixin } from 'react-icons/fa';
-import logo from "../images/arion.webp"
+import logo from "../images/ORION.png"
 const Footer = () => {
   return (
     <footer className="footer">

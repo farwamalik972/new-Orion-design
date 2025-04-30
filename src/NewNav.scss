@@ -1,13 +1,34 @@
   
 .new-nav-wrapper {
-    .custom-navbar {
-      background-image: linear-gradient(to top, #525353, #373838, #111b21);
-      padding: 10px 0;
+   background-image: radial-gradient(circle at left center, rgba(255, 255, 255, 0.08), transparent 60%), repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 8px), linear-gradient(135deg, #2f3030 0%, #2c2c2c 35%, #525353 65%, #373838 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+  .other-pages{
+ background-image: radial-gradient(circle at left center, rgba(255, 255, 255, 0.08), transparent 60%), repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 8px), linear-gradient(135deg, #2f3030 0%, #2c2c2c 35%, #525353 65%, #373838 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .custom-navbar {
+    padding: 10px 0;
+    height: 75px;
+    &.transparent-navbar {
+      // background-color: transparent !important;
+      //  z-index: 1;
+      position: fixed; // or relative if you're scrolling
+      z-index: 999;
+      width: 100%;
+      top: 0;
+      background-color: transparent !important;
+      .nav-link {
+        color: white !important;
+      }
+    }
       
   .navbar-brand .logo {
-    height: 50px;
     object-fit: contain;
-    width: 145px;
+    width: 100%;
+    height: 100%;
+    max-height: 115px;
   }
 
   .nav-link {
@@ -165,5 +186,20 @@
   }
   
   
-  
+  @media (max-width: 768px) {
+    .new-nav-wrapper{
+      .custom-navbar{
+        // background-image: linear-gradient(to top, #525353, #373838, #111b21) !important;
+        background-image: linear-gradient(0deg, #525353, #373838, #111b21);
+        height: 100% !important;
+        padding: 0px 6px !important;
+        .navbar-brand .logo {
+          object-fit: contain !important;
+          width: 100% !important;
+          height: 100% !important;
+          max-height: 75px !important;
+      }
+      }
+    }
+  }
   
