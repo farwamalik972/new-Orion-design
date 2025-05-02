@@ -878,7 +878,7 @@ body {
 .about-wrapper-page {
   /* AboutSection.scss */
 .about-section {
-  padding: 60px 0px;
+  padding: 115px 0px;
   .sec-title {
     margin-bottom: 45px;
     .title {
@@ -2786,7 +2786,7 @@ body {
   justify-content: center;
   align-items: center;
   background: #fefefe;
-  padding: 20px;
+  padding: 120px 0px;
 
   .scanner-card {
     background: white;
@@ -2859,6 +2859,7 @@ body {
 
 // 
 .project-wraper{
+  padding: 115px 0px;
   // src/components/CardItem.scss
 .card-item {
   margin-bottom: 20px;
@@ -3018,7 +3019,7 @@ body {
 
 .new-contact-page{
   section {
-    padding: 60px 0;
+    padding: 120px 0;
     min-height: 100vh;
   }
   
@@ -3288,7 +3289,6 @@ body {
         z-index: 3;
         display: flex;
         gap: 12px;
-        // background-image: radial-gradient(circle at left center, rgba(255, 255, 255, 0.08), transparent 60%), repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 8px), linear-gradient(135deg, #2f3030 0%, #2c2c2c 35%, #525353 65%, #373838 100%);
     
         .slider-column {
           width: 220px;
@@ -3333,7 +3333,7 @@ body {
         height: 100%;
         object-fit: cover;
         min-height: 480px;
-        filter: brightness(0.9);
+        // filter: brightness(0.9);
       }
     
       .video-overlay {
@@ -3360,7 +3360,7 @@ body {
         text-align: left;
     
         h2 {
-          font-size: 48px;
+          font-size: 38px;
           font-weight: 600;
           margin-bottom: 0;
         }
@@ -4035,7 +4035,7 @@ h2{
   color: #fff;
   position: relative;
   font-size: 22px;
-  margin: 50px 0;
+  margin: 115px 0;
 
 .experience-header-set {
   padding: 10px;
@@ -4238,7 +4238,7 @@ h2{
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: fill;
     }
   }
 

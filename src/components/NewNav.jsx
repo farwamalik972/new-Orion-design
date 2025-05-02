@@ -130,11 +130,34 @@ const NewNav = () => {
 
     const location = useLocation();
     const isHomePage = location.pathname === '/';
+    const [scrolled, setScrolled] = useState(false);
+  
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        if (isHomePage) {
+          setScrolled(window.scrollY > 50);
+        }
+      };
+  
+      if (isHomePage) {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }
+    }, [isHomePage]);
+  
+    const navbarClass = isHomePage
+      ? scrolled
+        ? 'scrolled'
+        : 'transparent'
+      : 'scrolled';
+  
+  
 
   return (
     <div className={`new-nav-wrapper ${isHomePage ? '' : 'other-pages'}`}>
       <Navbar expand="lg"
-      className={`custom-navbar ${isHomePage ? 'transparent-navbar' : ''}`}
+     className={`custom-navbar ${navbarClass}`} fixed="top"
       >
         <Container>
           <Navbar.Brand href="#">
@@ -219,10 +242,6 @@ const NewNav = () => {
             </Form>
 
             {/* Cart */}
-            {/* <Nav.Link className="cart-icon">
-              <FaShoppingCart />
-              <span className="cart-badge">0</span>
-            </Nav.Link> */}
                <Nav.Link className="cart-icon" onClick={handleShow}>
                         <FaShoppingCart />
                         <span className="cart-badge">{orderCount}</span>

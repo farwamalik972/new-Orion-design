@@ -3,18 +3,17 @@
    background-image: radial-gradient(circle at left center, rgba(255, 255, 255, 0.08), transparent 60%), repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 8px), linear-gradient(135deg, #2f3030 0%, #2c2c2c 35%, #525353 65%, #373838 100%);
     background-size: cover;
     background-repeat: no-repeat;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   .other-pages{
- background-image: radial-gradient(circle at left center, rgba(255, 255, 255, 0.08), transparent 60%), repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 8px), linear-gradient(135deg, #2f3030 0%, #2c2c2c 35%, #525353 65%, #373838 100%);
+     background-image: radial-gradient(circle at left center, rgba(255, 255, 255, 0.08), transparent 60%), repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 8px), linear-gradient(135deg, #2f3030 0%, #2c2c2c 35%, #525353 65%, #373838 100%);
     background-size: cover;
     background-repeat: no-repeat;
   }
   .custom-navbar {
     padding: 10px 0;
     height: 75px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     &.transparent-navbar {
-      // background-color: transparent !important;
-      //  z-index: 1;
-      position: fixed; // or relative if you're scrolling
       z-index: 999;
       width: 100%;
       top: 0;
@@ -22,6 +21,14 @@
       .nav-link {
         color: white !important;
       }
+    }
+    &.scrolled {
+      background-image: radial-gradient(circle at left center, rgba(255, 255, 255, 0.08), transparent 60%),
+                        repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 8px),
+                        linear-gradient(135deg, #2f3030 0%, #2c2c2c 35%, #525353 65%, #373838 100%);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 10px 0 #696969;
+      
     }
       
   .navbar-brand .logo {
